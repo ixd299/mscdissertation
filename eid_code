@@ -1,3 +1,4 @@
+#this interface has been developed using Plotly documentation
 import plotly.graph_objects as go #import the needed package
 
 diabetes_categories = ['Glucose','Blood Pressure','Age','SkinThickness','BMI','Pregnancies', 'DiabetesPedFunc',
