@@ -1,0 +1,32 @@
+import plotly.graph_objects as go #import the needed package
+
+diabetes_categories = ['Glucose','Blood Pressure','Age','SkinThickness','BMI','Pregnancies', 'DiabetesPedFunc',
+                       'Insulin'] #define a list with all diabetes variables
+
+
+fig = go.Figure() #call the function to create the base layout
+
+
+fig.add_trace(go.Scatterpolar(
+      r=[87, 58, 25, 30, 32.70, 2,0.17, 52], #define the radius
+      theta=categories, #define the categories
+      fill='toself',
+      name='Diabetes prediction' #name the category
+))
+fig.add_trace(go.Scatterpolar(
+      r=[56, 56, 22, 28, 24.2, 2,0.32, 0], #define the radius
+      theta=categories, #define the categories
+      fill='toself',
+      name='No diabetes reference' #name the category
+))
+
+fig.update_layout(
+  polar=dict(
+    radialaxis=dict(
+      visible=True, #make the graph visible
+      range=[0, 130] #set the value range
+    )),
+  showlegend=True #make the legend visible
+)
+
+fig.show() #call the function to show the chart
